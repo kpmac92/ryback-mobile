@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 export default class App extends React.Component {
   constructor(props){
@@ -26,9 +26,10 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>{this.state.sampleRecipe}</Text>
+        <Text>{this.state.sampleRecipe.ingredients[1].name}</Text>
+        <FlatList data = {this.state.sampleRecipe.ingredients}
+          renderItem={({item}) => <Text>{item.amount} {item.unit} {item.name}</Text>}
+          keyExtractor={(item) => item.name}/>
       </View>
     );
   }
@@ -37,7 +38,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#e6ffff',
     alignItems: 'center',
     justifyContent: 'center',
   },
