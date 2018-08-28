@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
+import IngredientList from './IngredientList';
 
 export default class App extends React.Component {
   constructor(props){
@@ -19,17 +20,15 @@ export default class App extends React.Component {
       {order: 3, ingredients: [1,2,3], verb: "combine", suffix: "gently."},
       {order: 4, ingredients: [1,2,3,4,5], verb: "stir", suffix: "thoroughly."}
     ]
-  }}
+  }};
   }
 
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.state.sampleRecipe.ingredients[1].name}</Text>
-        <FlatList data = {this.state.sampleRecipe.ingredients}
-          renderItem={({item}) => <Text>{item.amount} {item.unit} {item.name}</Text>}
-          keyExtractor={(item) => item.name}/>
+        <Text>{this.state.sampleRecipe.name}</Text>
+        <IngredientList ingredients = {this.state.sampleRecipe.ingredients}/>
       </View>
     );
   }
@@ -41,5 +40,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#e6ffff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
