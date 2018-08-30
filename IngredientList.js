@@ -11,9 +11,11 @@ export default class IngredientList extends React.Component {
     render() {
         return (
           <View style={styles.container}>
-            <Text>Ingredients</Text>
+            <Text adjustsFontSizeToFit>Ingredients</Text>
             <FlatList data = {this.state.ingredients}
-              renderItem={({item}) => <Text>{item.amount} {item.unit} {item.name}</Text>}
+              renderItem={({item}) => <Text adjustsFontSizeToFit minimumFontScale={.01} style={styles.text}>
+                {item.amount} {item.unit} {item.name}
+              </Text>}
               keyExtractor={(item) => item.name}/>
           </View>
         );
@@ -22,10 +24,11 @@ export default class IngredientList extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-      paddingTop: 25,
-      flex: 1,
       backgroundColor: '#e6ac00',
-      alignItems: 'center',
-      justifyContent: 'center',
+    },
+    text: {
+        flex: 1,
+        width: '100%',
+        fontSize: 100,
     }
   });
