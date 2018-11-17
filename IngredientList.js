@@ -9,11 +9,23 @@ export default class IngredientList extends React.Component {
     }
 
     render() {
+
+        textStyles = StyleSheet.create({
+            main: {
+                flex: 1,
+                width: '100%',
+                fontSize: 40,
+            },
+            title: {
+                fontSize: 40
+            }
+        })
+
         return (
           <View style={styles.container}>
-            <Text adjustsFontSizeToFit>Ingredients</Text>
+            <Text adjustsFontSizeToFit style={textStyles.title}>Ingredients</Text>
             <FlatList data = {this.state.ingredients}
-              renderItem={({item}) => <Text adjustsFontSizeToFit minimumFontScale={.01} style={styles.text}>
+              renderItem={({item}) => <Text adjustsFontSizeToFit minimumFontScale={.01} style={textStyles.main}>
                 {item.amount} {item.unit} {item.name}
               </Text>}
               keyExtractor={(item) => item.name}/>
@@ -26,9 +38,4 @@ const styles = StyleSheet.create({
     container: {
       backgroundColor: '#e6ac00',
     },
-    text: {
-        flex: 1,
-        width: '100%',
-        fontSize: 100,
-    }
   });
