@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import { createAppContainer } from "react-navigation";
 import RecipieScreen from "./RecipieScreen";
 
 class HomeScreen extends React.Component {
