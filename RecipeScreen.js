@@ -3,31 +3,39 @@ import { StyleSheet, Text, View } from 'react-native';
 import IngredientList from './IngredientList';
 
 export default class RecipeScreen extends React.Component {
- constructor(props){
-   super(props);
- }
+  constructor(props) {
+    super(props);
+  }
 
- render() {
-   const { navigation } = this.props;
-   const recipe = navigation.getParam('recipe'); 
-   return (
-     <View style={styles.container}>
-       <Text>{recipe.name}</Text>
-       <IngredientList ingredients = {recipe.ingredients}/>
-     </View>
-   );
- }
+  render() {
+    const { navigation } = this.props;
+    const recipe = navigation.getParam('recipe');
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>{recipe.name}</Text>
+        <View style={styles.container}>
+          <IngredientList ingredients={recipe.ingredients} />
+        </View>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
- container: {
-   flex: 1,
-   backgroundColor: '#e6ffff',
-   paddingTop: 20,
-   paddingLeft: 15,
-   paddingRight: 15,
-   paddingBottom: 20,
-   alignItems: 'stretch',
-   justifyContent: 'center',
- }
+  container: {
+    flex: 1,
+    backgroundColor: '#BAF2AE',
+    paddingTop: 20,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingBottom: 20,
+    alignItems: 'stretch',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 40,
+    fontFamily: 'sans-serif',
+    textAlign: 'center',
+    textAlignVertical: 'top',
+  }
 });

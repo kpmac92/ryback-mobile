@@ -8,7 +8,7 @@ class HomeScreen extends React.Component {
 
   render() {
     const sampleRecipes = [{
-      name: "pancakes",
+      name: "Pancakes",
       ingredients: [
         {id:1, name: "eggs", amount: "1", unit: ""},
         {id:2, name: "butter", amount:"4", unit: "tbsp"},
