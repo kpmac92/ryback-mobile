@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "chai": "^4.2.0",
     "install-peers": "^1.0.3",
     "jest-expo": "34.0.1",
+    "mocha": "^6.2.2",
     "react-test-renderer": "16.3.1"
   },
   "main": "./node_modules/expo/AppEntry.js",
@@ -13,7 +15,7 @@
     "eject": "expo eject",
     "android": "expo android",
     "ios": "expo ios",
-    "test": "jest"
+    "test": "mocha ./*.spec.js --require @babel/register"
   },
   "jest": {
     "preset": "jest-expo"
