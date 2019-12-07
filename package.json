@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "@testing-library/react-native": "^5.0.2",
     "chai": "^4.2.0",
     "install-peers": "^1.0.3",
     "jest-expo": "34.0.1",
@@ -15,10 +16,10 @@
     "eject": "expo eject",
     "android": "expo android",
     "ios": "expo ios",
-    "test": "mocha ./*.spec.js --require @babel/register"
+    "test": "jest"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "@testing-library/react-native"
   },
   "dependencies": {
     "@babel/plugin-transform-react-jsx-source": "^7.5.0",
