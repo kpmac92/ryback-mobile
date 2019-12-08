@@ -13,9 +13,12 @@ export default class IngredientList extends React.Component {
     return (
       <View style={styles.container}>
         <Text adjustsFontSizeToFit style={styles.titleText}>Ingredients</Text>
-        <FlatList data={this.state.ingredients}
+        <FlatList
+          data={this.state.ingredients}
           renderItem={({ item }) => renderIngredient(item)}
-          keyExtractor={(item) => item.name} />
+          keyExtractor={(item) => item.name}
+          testID='ingredient-list'
+        />
       </View>
     );
   }
