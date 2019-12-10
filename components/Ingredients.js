@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text} from 'react-native';
 import PrimaryList from './PrimaryList';
 
-function IngredientList (props) {
+function Ingredients (props) {
     return (
       <PrimaryList data={props.ingredients} title="Ingredients" renderItem={renderIngredient}/>
     );
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
     fontFamily: 'sans-serif-light'
   }
 });
-export default IngredientList;
+export default Ingredients;

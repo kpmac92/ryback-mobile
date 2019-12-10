@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import IngredientList from './IngredientList';
+import Ingredients from '../components/Ingredients';
 
 export default class RecipeScreen extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ export default class RecipeScreen extends React.Component {
       <View style={styles.container}>
         <Text style={styles.text}>{recipe.name}</Text>
         <View style={styles.container}>
-          <IngredientList ingredients={recipe.ingredients} />
+          <Ingredients ingredients={recipe.ingredients} />
         </View>
       </View>
     );
